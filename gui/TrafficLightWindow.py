@@ -15,6 +15,7 @@ class TrafficLightWindow(QWidget):
         super().__init__(parent)
         self.setWindowTitle("Traffic Light")
         self.setGeometry(50, 50, 100, 400)
+        self.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
         self.logger = logger.getChild(self.__class__.__name__)
         self.setup_ui()
         self.setup_timer()

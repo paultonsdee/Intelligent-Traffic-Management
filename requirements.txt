@@ -1,16 +1,12 @@
-!pip install librosa tensorflow-macos==2.7.0 scikit-learn numpy resampy moviepy opencv-python protobuf==3.20.0 PyQt5 shapely lapx onnxruntime onnx opencv-python-headless
-!pip install git+https://github.com/jstmn/generative-ai-python-3.8.git
-!export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
-
-PyQt5
-opencv-python
-numpy
-librosa
-torch
-onnx
-onnxruntime
-Pillow
-scikit-learn
-ultralytics
-moviepy
-google-generativeai
+PyQt5==5.15.11
+opencv-python==4.10.0.84
+ultralytics==8.3.31
+WISE-PaaS-DataHub-Edge-Python-SDK==1.1.7
+librosa==0.10.2.post1
+moviepy==1.0.3
+google-generativeai==0.8.3
+onnxruntime==1.20.0
+shapely==2.0.6
+lapx==0.5.11
+numba==0.60.0
+python-dotenv==1.0.1

@@ -4,7 +4,7 @@ from PyQt5.QtCore import pyqtSlot, Qt, QUrl
 from PyQt5.QtGui import QImage, QPixmap
 from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent
 from PyQt5.QtWidgets import (
-    QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QLabel, QSlider, QFileDialog, QMessageBox, QDialog
+    QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QLabel, QSlider, QFileDialog, QMessageBox, QDialog, QDesktopWidget
 )
 import cv2
 import os
@@ -32,6 +32,7 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle("Intelligent Traffic Management Application")
         self.resize(1600, 900)
+        self.center()
         self.logger = logger.getChild(self.__class__.__name__)
 
         # Initialize models and trackers
@@ -90,6 +91,15 @@ class MainWindow(QMainWindow):
                 border-radius: 8px;
             }
         """)
+
+    def center(self):
+        """
+        Đặt cửa sổ nằm chính giữa màn hình.
+        """
+        qr = self.frameGeometry()  # Lấy khung hình chữ nhật của cửa sổ
+        cp = QDesktopWidget().availableGeometry().center()  # Tìm điểm trung tâm của màn hình
+        qr.moveCenter(cp)  # Đặt hình chữ nhật khung vào vị trí trung tâm
+        self.move(qr.topLeft())  # Di chuyển cửa sổ tới vị trí trung tâm
 
     def initUI(self):
         """

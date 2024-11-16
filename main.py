@@ -10,7 +10,7 @@ def main():
     """
     The main function to start the application.
     """
-    try:
+    try: 
         app = QApplication(sys.argv)
         window = MainWindow()
         window.show()

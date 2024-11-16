@@ -1,15 +1,19 @@
 # --------------------- Configuration Management --------------------- #
 
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env.private
+load_dotenv(dotenv_path=".env.private")
 
 class Config:
     """Configuration class to manage environment variables and settings."""
 
     # Email settings
-    FROM_EMAIL = "vhp08072004@gmail.com"
+    FROM_EMAIL = os.getenv("FROM_EMAIL")
     FROM_EMAIL_NICKNAME = "Traffic Management System (TMS)"
-    EMAIL_PASSWORD = "wayp qcui muhs ietx"  # Ensure no spaces and is a valid app password
-    TO_EMAIL = "vhp08071974@gmail.com"
+    EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
+    TO_EMAIL = os.getenv("TO_EMAIL")
     EMAIL_SUBJECT = "Violation Alert"
     SEND_EACH = 20  # Send email every 5 violations
 
@@ -22,7 +26,7 @@ class Config:
     }
 
     # Gemini API
-    GEMINI_API_KEY = "AIzaSyBf1wGteqDPnWEjRaCM5JvVRptFe5UMUQg"
+    GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
     GEMINI_MODEL_NAME = "gemini-1.5-flash-8b"
 
     # Model paths

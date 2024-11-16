@@ -7,6 +7,7 @@ import json
 import os
 from config.config_logger import logger
 from config.Config import Config
+import cv2
 
 class RegionSelectionWindow(QDialog):
     """
@@ -47,10 +48,21 @@ class RegionSelectionWindow(QDialog):
         self.layout = QVBoxLayout(self)
         # Canvas to display image
         self.canvas = QLabel(self)
-        self.canvas.setAlignment(Qt.AlignTop | Qt.AlignLeft)
+        self.canvas.setAlignment(Qt.AlignTop | Qt.AlignCenter)
         self.layout.addWidget(self.canvas)
         # Convert image to QImage and display
+
+        screen_geometry = self.screen().availableGeometry()
+        max_width = screen_geometry.width() - 50
+        max_height = screen_geometry.height() - 150
         height, width, channel = self.image.shape
+
+        if width > max_width or height > max_height:
+            scale_factor = min(max_width / width, max_height / height)
+            width = int(width * scale_factor)
+            height = int(height * scale_factor)
+            self.image = cv2.resize(self.image, (width, height))
+
         bytes_per_line = 3 * width
         qt_image = QImage(self.image.data, width, height, bytes_per_line, QImage.Format_RGB888)
         self.pixmap = QPixmap.fromImage(qt_image)
