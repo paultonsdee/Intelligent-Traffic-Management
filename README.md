@@ -40,7 +40,7 @@ This system leverages AI and IoT technologies to address pressing traffic issues
 
 ---
 
-## Colaborators
+## Collaborators
 * [Vũ Hoàng Phát](https://github.com/paultonsdee) - Lead Project Manager & AI Solutions Developer
   * Designed and built the system architecture
   * Implemented AI solutions optimized for both cost and performance
