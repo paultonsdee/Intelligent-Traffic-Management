@@ -7,6 +7,10 @@ The **Intelligent Traffic Management System** was developed as a project for the
 ## Introduction
 This system leverages AI and IoT technologies to address pressing traffic issues in Vietnam, such as identifying violations that lead to congestion, managing chaotic traffic flow during rush hours, and prioritizing emergency vehicles (ambulances) through dynamic traffic light adjustments.
 
+- [Slide](slide.pdf)
+- [Video Demo](introduction.mp4)
+- [Technical Report](technical_report.pdf)
+
 **Details:**
 
 ---
